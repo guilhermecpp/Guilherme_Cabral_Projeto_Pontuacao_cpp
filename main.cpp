@@ -12,6 +12,9 @@ int main()
     int score_volume_de_compras;
     double volume_de_compras;
 
+    int score_inadimplencia;
+    int score_forma_de_pagamento;
+
     cout << "SISTEMA DE PERFIL DE CLIENTE" << endl;
     cout << "--------------------------------" << endl;
     cout << "INFORME OS DADOS DO ULTIMO ANO" << endl;
@@ -52,6 +55,41 @@ int main()
     }
 
     cout << "Score de volume de compras = " << score_volume_de_compras << " pontos" << endl;
+    cout << endl;
+
+    if(qtd_compras == 0)
+    {
+        score_inadimplencia = 0;
+    }else
+    {
+        if(atrasos == 0)
+        {
+            score_inadimplencia = 30;
+        }else if(atrasos == 1)
+        {
+            score_inadimplencia = 15;
+        }else
+        {
+            score_inadimplencia = 0;
+        }
+    }
+
+    if(qtd_compras == 0)
+    {
+        score_forma_de_pagamento = 0;
+    }else
+    {
+        if(forma_pagamento == 'D')
+        {
+            score_forma_de_pagamento = 5;
+        }else
+        {
+            score_forma_de_pagamento = 10;
+        }
+    }
+
+    cout << "Score de inadimplencia = " << score_inadimplencia << " pontos" << endl;
+    cout << "Score de forma de pagamento = " << score_forma_de_pagamento << " pontos" << endl;
     cout << endl;
 
     return 0;
