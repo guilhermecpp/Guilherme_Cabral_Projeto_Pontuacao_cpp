@@ -15,6 +15,8 @@ int main()
     int score_inadimplencia;
     int score_forma_de_pagamento;
 
+    int score_final;
+
     cout << "SISTEMA DE PERFIL DE CLIENTE" << endl;
     cout << "--------------------------------" << endl;
     cout << "INFORME OS DADOS DO ULTIMO ANO" << endl;
@@ -90,6 +92,24 @@ int main()
 
     cout << "Score de inadimplencia = " << score_inadimplencia << " pontos" << endl;
     cout << "Score de forma de pagamento = " << score_forma_de_pagamento << " pontos" << endl;
+    cout << endl;
+
+    score_final = score_volume_de_compras + score_inadimplencia + score_forma_de_pagamento;
+
+    cout << "Classificacao final = CLIENTE ";
+
+
+    if(score_final <= 25)
+    {
+        cout << "BRONZE" << endl;
+    }else if(score_final <= 75)
+    {
+        cout << "PRATA" << endl;
+    }else
+    {
+        cout << "OURO" << endl;
+    }
+
     cout << endl;
 
     return 0;
